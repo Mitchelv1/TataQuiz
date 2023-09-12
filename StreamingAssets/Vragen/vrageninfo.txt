@@ -1,4 +1,0 @@
-Het goede antwoord word opgeslagen in database zodat het antwoord niet bekeken kan worden in de bestanden.
-Type is de type vraag om naar een andere scene te gaan hier moet staan: "normal" voor een vraag zonder afbeelding, "image" voor een vraag met afbeelding.
-Als het type image is moet er ook image: "afbeeldingnaam" staan. (Afbeeldingen staan in Assets/Scenes/Resources) 
-Naar elk } haakje moet er een , staan behalve bij de laatste vraag
