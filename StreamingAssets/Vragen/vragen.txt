@@ -1,0 +1,225 @@
+{
+	vragen: {
+		1: {
+			vraag: "Welke van de onderstaande zinnen klopt niet?",
+			antwoord_1: "Met een combinatietang kan je iets vastpakken",
+			antwoord_2: "Met een combinatietang kan je spijkers uit iets trekken",
+			antwoord_3: "Met een combinatietang kan je dun draad doorknippen",
+			type: "normal"
+			},
+		2: {
+			vraag: "Met welk gereedschap kan je moeren en bouten aan- of losdraaien?",
+			antwoord_1: "Met een ringsleutel",
+			antwoord_2: "Met een langbektang",
+			antwoord_3: "Met een flenzenspreider",
+			type: "normal"
+			},
+		3: {
+			vraag: "Hoe heet het gereedschap dat te zien is in het plaatje?",
+			antwoord_1: "Een trektang",
+			antwoord_2: "Een zijkniptang",
+			antwoord_3: "Een combinatietang",
+			type: "image",
+			image: "Zijkniptang"
+			},
+		4: {
+			vraag: "Met welke soort sleutel kan je bouten en moeren met een exact bepaald koppel aan draaien?",
+			antwoord_1: "Met een engelse sleutel",
+			antwoord_2: "Met een dopsleutel",
+			antwoord_3: "Met een momentsleutel",
+			type: "normal"
+			},
+		5: {
+			vraag: "Wat is de functie van een momentsleutel?",
+			antwoord_1: "De functie is om bouten en moeren aan te draaien met een nauwkeurig bepaald koppel en te voorkomen dat deze te vast worden aangedraaid.",
+			antwoord_2: "De functie is om bouten en moeren aan te draaien met een nauwkeurig bepaald koppel en te voorkomen dat deze te los of te vast worden aangedraaid.",
+			antwoord_3: "De functie is om bouten en moeren aan te draaien met een nauwkeurig bepaald koppel en te voorkomen dat deze te los worden aangedraaid.",
+			type: "image",
+            image: "Momentsleutel"
+			},
+		6: {
+			vraag: "Wat zijn de voordelen van dopsleutels met bijbehorende losse doppen?",
+			antwoord_1: "Dopsleutels met bijbehorende losse doppen bieden de mogelijkheid om verschillende maten doppen te gebruiken met dezelfde ratel.",
+			antwoord_2: "Dopsleutels met bijbehorende losse doppen bieden niet de mogelijkheid om verschillende maten doppen te gebruiken met dezelfde slinger.",
+			antwoord_3: "Dopsleutels met bijbehorende losse doppen bieden de mogelijkheid om verschillende maten doppen te gebruiken met dezelfde handgreep.",
+			type: "image",
+			image: "Dopsleutel"
+			},
+		7: {
+			vraag: "Waarom is een ringsleutel handig?",
+			antwoord_1: "Een ringsleutel is onhandig omdat het de hele omtrek van de moer of boutkop omsluit, waardoor de kans op slippen klein is.",
+			antwoord_2: "Een ringsleutel is handig omdat het de hele omtrek van de moer of boutkop omsluit, waardoor het draaien gemakkelijker wordt.",
+			antwoord_3: "Een ringsleutel is handig omdat het de hele omtrek van de moer of boutkop omsluit, waardoor het draaien gemakkelijker wordt en de kans op slippen klein is.",
+			type: "normal"
+			},
+		8: {
+			vraag: "Hoe verschilt een steeksleutel van een ringsleutel?",
+			antwoord_1: "In tegenstelling tot een ringsleutel, past het open einde van een steeksleutel niet over de evenwijdige en tegenover elkaar liggende zijden van een zeskantige of vierkante moer of boutkop.",
+			antwoord_2: "In tegenstelling tot een ringsleutel, past het open einde van een steeksleutel over de evenwijdige en tegenover elkaar liggende zijden van een zeskantige of vierkante moer of boutkop.",
+			antwoord_3: "Net als bij een ringsleutel, past het open einde van een steeksleutel over de evenwijdige en tegenover elkaar liggende zijden van een zeskantige of vierkante moer of boutkop.",
+			type: "normal"
+			},
+		9: {
+			vraag: "Hoe werkt een mechanische flenzenspreider?",
+			antwoord_1: "De haken van de mechanische flenzenspreider vallen in de boutgaten van de flens. Vervolgens draait men de spindel aan waardoor de conisch gevormde kop tussen de flenzen komt en deze uiteen spreidt. ",
+			antwoord_2: "De haken van de mechanische flenzenspreider vallen nooit in de boutgaten van de flens. Vervolgens draait men de spindel aan waardoor de vierkante gevormde kop tussen de flenzen komt en deze uiteen spreidt.",
+			antwoord_3: "De haken van de mechanische flenzenspreider vallen in de boutgaten van de flens. Vervolgens schakelt men de spindel in waardoor de conisch gevormde kop tussen de flenzen komt en deze uiteen spreidt.",
+			type: "normal"
+			},
+		10: {
+			vraag: "Hoe heet het gereedschap dat te zien is in het plaatje?",
+			antwoord_1: "een Combinatietang",
+			antwoord_2: "een Langbektang",
+			antwoord_3: "een Waterpomptang",
+			type: "image",
+            image: "Waterpomptang"
+			},
+		11: {
+			vraag: "Hoe wordt het hefboomprincipe gebruikt bij een waterpomptang?",
+			antwoord_1: "Bij een waterpomptang wordt het hefboomprincipe gebruikt om grote krachten uit te oefenen op het te bewerken voorwerp.",
+			antwoord_2: "Bij een waterpomptang wordt het hefboomprincipe (kracht x newtonmeter) gebruikt om grote krachten uit te oefenen op het te bewerken voorwerp.",
+			antwoord_3: "Bij een waterpomptang wordt het hefboomprincipe gebruikt om minder grote krachten uit te oefenen op het te bewerken voorwerp.",
+			type: "normal"
+			},
+		12: {
+			vraag: "Waarvoor worden kunststof hamers gebruikt?",
+			antwoord_1: "Kunststof hamers worden door artsen gebruikt om je reflex te testen.",
+			antwoord_2: "Kunststof hamers worden gebruikt voor montagedoeleinden en plaatbewerkingen.",
+			antwoord_3: "Kunststof hamers worden voor het timmeren gebruikt.",
+			type: "image",
+            image: "Kunststof_hamer"
+			},
+		13: {
+			vraag: "Waar zijn de halfronde helften van de bek van een langbektang voorzien?",
+			antwoord_1: "De halfronde helften van de bek van een langbektang zijn op het uiteinde voorzien van naald scherpe punten.",
+			antwoord_2: "De halfronde helften van de bek van een langbektang zijn op het uiteinde voorzien van heel hard staal om juist minder grip te krijgen.",
+			antwoord_3: "De halfronde helften van de bek van een langbektang zijn op het uiteinde voorzien van fijne ribbels.",
+			type: "normal"
+			},
+		14: {
+			vraag: "Wat is het verschil tussen het geribbelde gedeelte en het scherpe geslepen gedeelte van een combinatietang?",
+			antwoord_1: "Het geribbelde gedeelte van een combinatietang is bedoeld om kleine dingen vast te houden, terwijl het gedeelte met de scherp geslepen bedoeld is om dikke bouten door te knippen.",
+			antwoord_2: "Het geribbelde gedeelte van een combinatietang is bedoeld om kleine dingen vast te houden, terwijl het gedeelte met de scherp geslepen bedoeld is om draad door te knippen.",
+			antwoord_3: "Het geribbelde gedeelte van een combinatietang is bedoeld om zeer grote dingen vast te houden, terwijl het gedeelte met de scherp geslepen bedoeld is om draad door te knippen.",
+			type: "normal"
+			},
+		15: {
+			vraag: "Wat is een stalen liniaal?",
+			antwoord_1: "Een stalen liniaal is een meetinstrument dat verkocht wordt in lengtes van 300 tot 500 millimeter.",
+			antwoord_2: "Een stalen liniaal is een gereedschap dat een stukadoor gebruikt om zijn muren vlak te zetten.",
+			antwoord_3: "Een stalen liniaal is een andere naam voor een rolmaat.",
+			type: "normal"
+			},
+		16: {
+			vraag: "Wat is de functie van het wormwiel op een Engelse sleutel?",
+			antwoord_1: "Het wormwiel op een Engelse sleutel maakt het mogelijk om de bekbreedte van de sleutel aan te passen. ",
+			antwoord_2: "Het wormwiel op een Engelse sleutel maakt het mogelijk om via het kroonwiel de bekbreedte van de sleutel aan te passen.",
+			antwoord_3: "Het wormwiel op een verstelbare moersleutel maakt het onmogelijk om de bekbreedte van de sleutel aan te passen.",
+			type: "normal"
+			},
+		17: {
+			vraag: "Voor welk beroep was de duimstok oorspronkelijk bedoeld?",
+			antwoord_1: "De duimstok is van origine gelinkt aan het beroep van architect.",
+			antwoord_2: "De duimstok is van origine gelinkt aan het beroep van anatomopatholoog om de lengte van een duim op te meten.",
+			antwoord_3: "De duimstok is van origine gelinkt aan het beroep van timmerman.",
+			type: "image",
+            image: "Duimstok"
+			},
+		18: {
+			vraag: "Wat is de nauwkeurigheid van de meeste schuifmaten?",
+			antwoord_1: "De meeste schuifmaten hebben een nauwkeurigheid van 1/10 of 1/20 cm.",
+			antwoord_2: "De meeste schuifmaten hebben een nauwkeurigheid van 1/10 of 1/20 mm.",
+			antwoord_3: "De meeste schuifmaten hebben een nauwkeurigheid van 1/10 of 1/20 dm.",
+			type: "normal"
+			},
+		19: {
+			vraag: "Hoe heet het gereedschap dat te zien is in het plaatje?",
+			antwoord_1: "een Klauwhamer",
+			antwoord_2: "een Bankhamer",
+			antwoord_3: "een Kunststofhamer",
+			type: "image",
+            image: "Bankhamer"
+			},
+		20: {
+			vraag: "Waar voor wordt de bastaardvijl gebruikt?",
+			antwoord_1: "De bastaardvijl wordt gebruikt voor grovere werkzaamheden.",
+			antwoord_2: "De bastaardvijl wordt gebruikt voor grovere werkzaamheden, zoals het slopen.",
+			antwoord_3: "Voor grovere slijpwerkzaamheden.",
+			type: "normal"
+			},
+		21: {
+			vraag: "Welke materialen kunnen met een spiraalboor geboord worden?",
+			antwoord_1: "Met een spiraalboor kan je in beton boren.",
+			antwoord_2: "Met een spiraalboor kan je in hout boren.",
+			antwoord_3: "Met een spiraalboor kan in principe in elk materiaal geboord worden, zoals hout, metaal, steen en andere soorten materialen.",
+			type: "normal"
+			},
+		22: {
+			vraag: "Wat is het verschil tussen een hoogteschuifmaat en een gewone schuifmaat?",
+			antwoord_1: "Een gewone schuifmaat wordt gebruikt om de afmetingen van een werkstuk te meten, terwijl een hoogteschuifmaat wordt gebruikt om de hoogte van een werkstuk te meten.",
+			antwoord_2: "Een gewone schuifmaat wordt gebruikt om de hardheid van een werkstuk te meten, terwijl een hoogteschuifmaat wordt gebruikt om kraslijnen op een werkstuk aan te brengen.",
+			antwoord_3: "Een gewone schuifmaat wordt gebruikt om de afmetingen van een werkstuk te meten, terwijl een hoogteschuifmaat wordt gebruikt om kraslijnen op een werkstuk aan te brengen.",
+			type: "image",
+            image: "Schuifmaat"
+			},
+        23: {
+			vraag: "Wat zijn slagletters en slagcijfers en waarvoor worden ze gebruikt?",
+			antwoord_1: "Slagletters en slagcijfers zijn handslagstempels die gebruikt worden om symbolen in bijvoorbeeld metaal of hout te slaan.",
+			antwoord_2: "Slagletters en slagcijfers zijn slagstempels die gebruikt worden om symbolen in bijvoorbeeld glas te slaan.",
+			antwoord_3: "Slagletters en slagcijfers zijn handslagstempels die gebruikt worden om symbolen in bijvoorbeeld thermoharders te slaan.",
+			type: "normal"
+  			},
+        24: {
+			vraag: "Wat is het doel van een steekpasser?",
+			antwoord_1: "Met een steekpasser kan een rechthoeken en vierkanten worden gekrast op verschillende ondergronden.",
+			antwoord_2: "Met een steekpasser kan een eclips worden gekrast op verschillende ondergronden.",
+			antwoord_3: "Met een steekpasser kan een cirkel of cirkelboog worden gekrast op verschillende ondergronden.",
+			type: "normal"
+			},
+        25: {
+			vraag: "Waarom is een centerpunt handig bij het boren van nauwkeurige gaten?",
+			antwoord_1: "Met een centerpunt kan nauwkeurig een gat worden gemaakt in het middelpunt van het te boren gat.",
+			antwoord_2: "Met een centerpunt kan nauwkeurig een putje worden gemaakt in het middelpunt van een cirkel.",
+			antwoord_3: "Met een centerpunt kan nauwkeurig een putje worden gemaakt in het middelpunt van het te boren gat.",
+			type: "normal"
+			},
+        26: {
+			vraag: "Waarvoor wordt een kraspen gebruikt?",
+			antwoord_1: "Voor het aftekenen, om samen met een passer cirkels te tekenen.",
+			antwoord_2: "Voor het aftekenen op metaal, oftewel het aanbrengen van lijnen op werkstukken.",
+			antwoord_3: "Voor het aftekenen op zachte materialen, oftewel het aanbrengen van lijnen op materialen.",
+			type: "normal"
+			},
+        27: {
+			vraag: "Waarvoor wordt een haakse slijper vaak gebruikt?",
+			antwoord_1: "Een haakse slijper wordt vaak gebruikt voor het grovere werk, zoals het doorslijpen van buizen of betonijzer.",
+			antwoord_2: "Een haakse slijper wordt nooit gebruikt voor het grovere werk, zoals het doorslijpen van buizen of betonijzer.",
+			antwoord_3: "Een haakse slijper wordt vaak gebruikt voor het het slijpen van haakse hoeken op je werkstuk.",
+			type: "normal"
+			},
+        28: {
+			vraag: "Wat is een tafel/kolomboormachine?",
+			antwoord_1: "Een tafel/kolomboormachine is een stationaire boormachine die specifiek is ontworpen voor nauwkeurig boorwerk.",
+			antwoord_2: "Een tafel/kolomboormachine is een stationaire boormachine die specifiek is ontworpen voor onnauwkeurig boorwerk op houten voorwerpen.",
+			antwoord_3: "Een tafel/kolomboormachine is een stationaire boormachine die specifiek is ontworpen voor het kotteren van aluminium onderdelen.",
+			type: "normal"
+			},
+        29: {
+			vraag: "Wat is een draadtap?",
+			antwoord_1: "Een boutvormig stuk gereedschap dat wordt gebruikt voor het maken van een inwendige boutdraad.",
+			antwoord_2: "Een onderdeel van een biertap in een professionele omgeving waar zogenaamd draadbier wordt geschonken.",
+			antwoord_3: "Een schroefvormig stuk gereedschap dat wordt gebruikt voor het maken van een inwendige schroefdraad.",
+			type: "normal",
+			},
+        30: {
+			vraag: "Wat is de naam van het gereedschap dat ook wel Beugelzaag wordt genoemd?",
+			antwoord_1: "Een figuurzaag.",
+			antwoord_2: "Een ijzerzaag.",
+			antwoord_3: "Een kapzaag.",
+			type: "image",
+            image: "Beugelzaag",
+            laatste: "ja"
+			}
+
+	}
+}
