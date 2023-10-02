@@ -105,15 +105,36 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
+           window.unityInstance = unityInstance;
+           loadingBar.style.display = "none";
+           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
-          };
+           };
         }).catch((message) => {
           alert(message);
         });
       };
       document.body.appendChild(script);
     </script>
+    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-database-compat.js"></script>
+    
+    <script type="module">
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+      apiKey: "AIzaSyDyMeylyBD52r1SqzkxVxaiurE-6JGlKgk",
+      authDomain: "gereedschapquiz.firebaseapp.com",
+      databaseURL: "https://gereedschapquiz-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "gereedschapquiz",
+      storageBucket: "gereedschapquiz.appspot.com",
+      messagingSenderId: "423984943325",
+      appId: "1:423984943325:web:4cbc6bb0ba0e35da0d8b34",
+      measurementId: "G-12R899T4K8"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig)
+      </script>
   </body>
 </html>
