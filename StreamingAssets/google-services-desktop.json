@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "423984943325",
+    "firebase_url": "https://gereedschapquiz-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "gereedschapquiz",
+    "storage_bucket": "gereedschapquiz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423984943325:android:d63112238a3871bd0d8b34",
+        "android_client_info": {
+          "package_name": "com.tata.gereedschap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423984943325-5ovrulofldfbun299brol9e6caao2k9n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1ihTXmvLJLpCyJfFpunLVituFHaMQJoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423984943325-5ovrulofldfbun299brol9e6caao2k9n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
