@@ -17,6 +17,8 @@ body {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     padding: 30px;
+    display: wrap;
+    flex-wrap: wrap;
     padding-top: 0px;
 }
 .timerbar{
@@ -28,6 +30,8 @@ body {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     padding-bottom: 30px;
+    display: wrap;
+    flex-wrap: wrap;
     padding-right: 5px;
 }
 .progressbar{
@@ -35,6 +39,8 @@ body {
     max-width: 1500px;
     height: 15px;
     margin: 0px auto 0;
+    display: wrap;
+    flex-wrap: wrap;
     background: rgb(218, 215, 215);
 }
 .timerbar p {
@@ -48,6 +54,26 @@ body {
     font-weight: 600;
     border-bottom: 5px solid #333333;
     padding-bottom: 30px;
+}
+@media screen and (max-width: 425px){
+    .app{
+        width: 90%;
+        display: flex;
+          justify-content: center;
+        flex-wrap: wrap;
+    }
+    .progressbar{
+        width: 90%;
+        display: flex;
+          justify-content: center;
+        flex-wrap: wrap;
+    }
+    .timerbar{
+        width: 90%;
+        display: flex;
+          justify-content: center;
+        flex-wrap: wrap;
+    }
 }
 .quiz{
     padding: 20px 0;
