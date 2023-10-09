@@ -2,9 +2,9 @@ const vragen = [
     {
         vraag: "Welke van de onderstaande zinnen klopt niet? ",
         antwoorden: [
-            { text: "Met een combinatietang kan je iets vastpakken", goed: false},
-            { text: "Met een combinatietang kan je spijkers uit iets trekken", goed: true},
-            { text: "Met een combinatietang kan je dun draad doorknippen", goed: false}
+            { text: "Met een spiraalboor kan je in beton boren.", goed: false},
+            { text: "Met een spiraalboor kan je in hout boren.", goed: true},
+            { text: "Met een spiraalboor kan in principe in elk materiaal geboord worden, zoals hout, metaal, steen en andere soorten materialen.", goed: false}
         ]
     },
     {
