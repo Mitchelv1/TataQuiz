@@ -106,7 +106,7 @@ body {
 @media screen and (max-width: 425px){
     .toplogo{
         margin: auto;
-        min-width: 5px;
+        min-width: 100px;
         padding-top: 1%;
         width: 25%;
         
