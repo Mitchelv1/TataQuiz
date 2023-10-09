@@ -103,9 +103,13 @@ body {
     padding-top: 1%;
     width: 25%;
 }
-@media screen and (max-width: 640px){
+@media screen and (max-width: 425px){
     .toplogo{
-        min-width: 200px;
+        margin: auto;
+        min-width: 5px;
+        padding-top: 1%;
+        width: 25%;
+        
     }
 }
 img{
