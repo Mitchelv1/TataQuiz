@@ -11,22 +11,17 @@ body {
     background: #ffffff;
     width: 90%;
     max-width: 1500px;
-    min-height: 200px;
     margin: 0px auto 0;
-    border-radius: 10px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    padding: 30px;
-    padding-top: 0px;
+    padding-right: 30px;
+    padding-left: 30px;
 }
 .timerbar{
     background: #ffffff;
     width: 90%;
     max-width: 1500px;
     margin: 5vw auto 0;
-    border-radius: 10px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     padding-bottom: 30px;
     padding-right: 5px;
 }
@@ -50,7 +45,7 @@ body {
     padding-bottom: 30px;
 }
 .quiz{
-    padding: 20px 0;
+    padding: 20px 0 20px;
 }
 .quiz h2{
     font-size: 1.6vw;
@@ -72,6 +67,24 @@ body {
     cursor: pointer;
     transition: all 0.3s;
 }
+.bottombar{
+    width: 100%;
+    max-width: 1500px;
+    height: 5px;
+    margin: 0px auto 0;
+    background: rgb(218, 215, 215);
+}
+.buttonbar{
+    background: #ffffff;
+    width: 90%;
+    max-width: 1500px;
+    min-height: 60px;
+    margin: 0px auto 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
 .btn:hover:not([disabled]){
     background: #2561B7;
     color: #ffffff
@@ -79,20 +92,32 @@ body {
 .btn:disabled{
     cursor: no-drop;
 }
-.antwoordbtns{
+#antwoord-buttons{
     margin-top: 20px;
 }
 #volgende-btn{
-    background: #001e4d;
+    background: #2B80D4;
     color: #fff;
     font-weight: 500;
+    float: right;
     width: 150px;
-    border: 0;
     padding: 10px;
-    margin: 20px auto 0;
+    border: 1px solid #222222;
+    margin: 9px auto 0;
     border-radius: 4px;
     cursor: pointer;
-    display: none;
+}
+#vorige-btn{
+    background: #2B80D4;
+    color: #fff;
+    font-weight: 500;
+    float: left;
+    width: 150px;
+    padding: 10px;
+    border: 1px solid #222222;
+    margin: 9px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
 }
 .goed{
     background: #9aeabc;
@@ -131,7 +156,12 @@ body {
     .timerbar{
         margin: 10px auto 0;
     }
-
+    #vorige-btn{
+        width: 100px;
+    }
+    #volgende-btn{
+        width: 100px;
+    }
 }
 
 img{
