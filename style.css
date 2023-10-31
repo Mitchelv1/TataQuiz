@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body, html {
+    background: #377bbc;
+    height: 100%;
+    margin: 0;
+}
+.start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+}   
+.start button{
+    background-color: transparent;
+    border: 0px;
+    text-align: center;
+}
