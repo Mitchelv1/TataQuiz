@@ -7,16 +7,52 @@
 body, html {
     background: #377bbc;
     height: 100%;
-    margin: 0;
+    margin: 0px auto;
 }
-.start{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100%;
-}   
-.start button{
-    background-color: transparent;
-    border: 0px;
+.titel h1 {
     text-align: center;
+    color: aliceblue;
+}
+.titel{
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    float: left;
+}
+.nav-bar{
+    height: 110px;
+    background: #377bbc;
+    margin: 0 auto 0;
+    border-bottom: 3px solid #ffffff;
+}
+.logodiv{
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+.logodiv img{
+    width: 100px;
+}
+li {
+    float: left;
+}
+ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #377bbc;
+}
+li a{
+    display: block;
+    height: 107px;
+    padding: 43px 25px;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+.container {
+    margin: 0 5vw;
+    height: 100%;
 }
