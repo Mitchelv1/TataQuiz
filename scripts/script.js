@@ -67,9 +67,7 @@ vorigeButton.addEventListener("click", ()=>{
     fetch('../vragen/vragengs.json')
     .then(res => res.json())
     .then(data => {
-        if(data.vragen[vraagCount].laatste == "ja"){
-            console.log("dit was laatste vraag");
-        }else if (vraagCount >= 2){
+        if (vraagCount >= 2){
             vraagCount--;
             while(antwoordButtons.firstChild){
                  antwoordButtons.removeChild(antwoordButtons.firstChild);
