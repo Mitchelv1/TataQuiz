@@ -51,7 +51,7 @@ body, html {
 }
 .quiz h2{
     font-size: 1.6vw;
-    color: #00378f;
+    color: #001f52;
     font-weight: 600;
 }
 .btn{
@@ -137,7 +137,6 @@ body, html {
 .fout{
     background: #ff9393;
 }
-
 .toplogo{
     margin: auto;
     min-width: 400px;
@@ -152,12 +151,17 @@ body, html {
         font-size: 16px;
     }
 }
+@media screen and (max-width: 600px){
+    #vorige-btn{
+        width: 125px;
+    }
+    #volgende-btn{
+        width: 125px;
+    }
+}
 @media screen and (max-width: 425px){
     .toplogo{
         min-width: 300px;
-    }
-    .timerbar{
-        margin: 50px auto 0;
     }
     .quiz h2{
         font-size: 18.5px;
@@ -165,14 +169,13 @@ body, html {
     .btn{
         font-size: 13px;
     }
-    .timerbar{
-        margin: 10px auto 0;
-    }
     #vorige-btn{
-        width: 100px;
+        width: 25vw;
+        font-size: 3vw;
     }
     #volgende-btn{
-        width: 100px;
+        width: 25vw;
+        font-size: 3vw;
     }
 }
 img{

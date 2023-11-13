@@ -9,14 +9,46 @@ body, html {
     height: 100%;
     margin: 0px auto;
 }
-.titel h1 {
-    text-align: center;
-    color: aliceblue;
+.begin {
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
-.titel{
-    padding-top: 10vw;
-    padding-bottom: 10vw;
-    float: left;
+.titel h1 {
+    font-size: 40px;
+    text-align: center;
+    color: #ffffff;
+}
+.samenvatting p {
+    margin-top: 20px;
+    font-weight: 100;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+.quizzen-btn button {
+    background: #ffffff;
+    color: #3D7EDB;
+    font-weight: bold;
+    font-size: 16px;
+    width: 225px;
+    height: 75px;
+    padding: 10px;
+    border: 1px solid #222222;
+    margin-top: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.quizzen-btn button:hover{
+    background: #3D7EDB;
+    color: #ffffff;
+}
+.quizzen-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .nav-bar{
     height: 110px;
