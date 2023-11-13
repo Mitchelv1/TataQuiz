@@ -87,12 +87,9 @@ body, html {
     padding-right: 30px;
     padding-left: 30px;
 }
-.btn:hover:not([disabled]){
+.btn:hover{
     background: #2561B7;
     color: #ffffff
-}
-.btn:disabled{
-    cursor: no-drop;
 }
 #antwoord-buttons{
     margin-top: 20px;
@@ -111,12 +108,12 @@ body, html {
     transition: all 0.3s;
 }
 #volgende-btn:hover:not([disabled]){
-    background: #2561B7;
-    color: #ffffff
+    background: #ffffff;
+    color: #3D7EDB;
 }
 #vorige-btn{
     background: #3D7EDB;
-    color: #fff;
+    color: #ffffff;
     font-weight: 500;
     float: left;
     width: 150px;
@@ -128,55 +125,14 @@ body, html {
     transition: all 0.3s;
 }
 #vorige-btn:hover:not([disabled]){
-    background: #2561B7;
-    color: #ffffff
-}
-.goed{
-    background: #9aeabc;
-}
-.fout{
-    background: #ff9393;
+    background: #ffffff;
+    color: #3D7EDB;
 }
 .toplogo{
     margin: auto;
     min-width: 400px;
     padding-top: 1%;
     width: 25%;
-}
-@media screen and (max-width: 1350px){
-    .quiz h2{
-        font-size: 21.5px;
-    }
-    .btn{
-        font-size: 16px;
-    }
-}
-@media screen and (max-width: 600px){
-    #vorige-btn{
-        width: 125px;
-    }
-    #volgende-btn{
-        width: 125px;
-    }
-}
-@media screen and (max-width: 425px){
-    .toplogo{
-        min-width: 300px;
-    }
-    .quiz h2{
-        font-size: 18.5px;
-    }
-    .btn{
-        font-size: 13px;
-    }
-    #vorige-btn{
-        width: 25vw;
-        font-size: 3vw;
-    }
-    #volgende-btn{
-        width: 25vw;
-        font-size: 3vw;
-    }
 }
 img{
     width: 100%;
@@ -223,4 +179,39 @@ li:hover:not([disabled]){
 .container {
     margin: 0 5vw;
     height: 100%;
+}
+@media screen and (max-width: 1350px){
+    .quiz h2{
+        font-size: 21.5px;
+    }
+    .btn{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 600px){
+    #vorige-btn{
+        width: 125px;
+    }
+    #volgende-btn{
+        width: 125px;
+    }
+}
+@media screen and (max-width: 425px){
+    .toplogo{
+        min-width: 300px;
+    }
+    .quiz h2{
+        font-size: 18.5px;
+    }
+    .btn{
+        font-size: 13px;
+    }
+    #vorige-btn{
+        width: 25vw;
+        font-size: 3vw;
+    }
+    #volgende-btn{
+        width: 25vw;
+        font-size: 3vw;
+    }
 }
