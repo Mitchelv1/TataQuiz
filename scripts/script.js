@@ -1,17 +1,23 @@
 let vraagCount = 1;
+let buttonid = 1;
 const vraagElement = document.getElementById("vraag");
 const antwoordButtons = document.getElementById("antwoord-buttons");
 const volgendeButton = document.getElementById("volgende-btn");
 const vorigeButton = document.getElementById("vorige-btn");
+const imgDiv = document.getElementById("imagediv");
 function getType(){
     fetch('../vragen/vragengs.json')
     .then(res => res.json())
     .then(data => {
         if (data.vragen[vraagCount].type == "normal"){
             console.log("normale vraag")
+            imgDiv.classList.remove("imagestyle");
             NormaalVraag();
         } else if (data.vragen[vraagCount].type == "image"){
             console.log("image vraag")
+            imgDiv.classList.add("imagestyle");
+            // antwoordButtons.classList.remove("antwoord-buttons")
+            // antwoordButtons.classList.add("antwoord-buttonsimg");
             ImageVraag();
         }
         // console.log(data.vragen[1].type);
@@ -27,8 +33,11 @@ function NormaalVraag(){
         const button = document.createElement("button");
         button.innerHTML = antwoord.text;
         button.classList.add("btn");
+        button.setAttribute('id', buttonid)
         antwoordButtons.appendChild(button);
+        buttonid++;
      });
+     buttonid = 1;
     })
 }
 
@@ -41,8 +50,16 @@ function ImageVraag(){
         const button = document.createElement("button");
         button.innerHTML = antwoord.text;
         button.classList.add("btn");
+        button.setAttribute('id', buttonid)
         antwoordButtons.appendChild(button);
+        buttonid++;
      });
+     const imagesrc = data.vragen[vraagCount].image;
+     const img = document.createElement("img");
+     img.src = '../images/' + imagesrc + '.png';
+     img.classList.add('image')
+     imgDiv.appendChild(img);
+     buttonid = 1;
     })
 }
 
@@ -58,6 +75,9 @@ volgendeButton.addEventListener("click", ()=>{
             while(antwoordButtons.firstChild){
                  antwoordButtons.removeChild(antwoordButtons.firstChild);
                 }
+            while(imgDiv.firstChild){
+                imgDiv.removeChild(imgDiv.firstChild);
+            }
             getType();
         }
     })
@@ -72,6 +92,9 @@ vorigeButton.addEventListener("click", ()=>{
             while(antwoordButtons.firstChild){
                  antwoordButtons.removeChild(antwoordButtons.firstChild);
                 }
+            while(imgDiv.firstChild){
+                imgDiv.removeChild(imgDiv.firstChild);
+            }
             getType();
         }
     })
