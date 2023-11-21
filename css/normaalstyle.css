@@ -40,14 +40,7 @@ body, html {
     float: right;
     font-size: 30px;
 }
-/* .app h1{
-    font-size: 10px;
-    color: #001e4d;
-    font-weight: 600;
-    padding-bottom: 30px;
-} */
 .quiz{
-    /* padding: 20px 0 20px; */
     display: flex;
     flex-direction: row;
 }
@@ -104,20 +97,14 @@ body, html {
     margin-top: 20px;
     width: 100%;
 }
-/* .antwoord-buttonsimg{
-    margin-top: 20px;
-    width: 100%;
-} */
 .imagestyle{
     flex: 1;
     display: flex;
     padding-left: 50px;
-    /* margin-top: 32px; */
     align-items: center;
     justify-content: center;
 }
 #imagediv img{
-    /* float: right; */
     width: 250px;
     height: 250px;
 }
@@ -181,10 +168,6 @@ body, html {
     padding-top: 1%;
     width: 25%;
 }
-/* img{
-    width: 100%;
-    height: 100%;
-} */
 .nav-bar{
     height: 110px;
     background: #377bbc;
@@ -236,12 +219,6 @@ li:hover:not([disabled]){
     }
 }
 @media screen and (max-width: 750px){
-    /* #vorige-btn{
-        width: 125px;
-    }
-    #volgende-btn{
-        width: 125px;
-    } */
     .quiz{
         flex-direction: column-reverse;
     }
@@ -267,7 +244,6 @@ li:hover:not([disabled]){
         font-size: 12px;
     }
     #imagediv img{
-        /* float: right; */
         width: 180px;
         height: 180px;
     }
