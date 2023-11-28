@@ -173,11 +173,16 @@ body, html {
     float: right;
     text-align: center;
     width: 34%;
-}
-.vraagnummer h1{
-    font-size: 25px;
     margin: 12px auto 0;
+}
+.vraagnummer p{
+    font-size: 25px;
+    /* margin: 12px auto 0; */
     color: #001e4d;
+    /* text-align: center;
+    align-items: center;
+    justify-content: center; */
+    /* min-height: 45px; */
 }
 .toplogo{
     margin: auto;
@@ -263,6 +268,12 @@ li:hover:not([disabled]){
     #imagediv img{
         width: 180px;
         height: 180px;
+    }
+    .vraagnummer {
+        margin: 14px auto 0;
+    }
+    .vraagnummer p{
+        font-size: 22px;
     }
 }
 @media screen and (max-width: 300px) {
