@@ -1,6 +1,23 @@
-let vraagCount = 1;
+const firebaseConfig = {
+    apiKey: "AIzaSyDv61az4_Xo4aTlQB7RdLWCwfVgAMF4Faw",
+    authDomain: "tataquizzen.firebaseapp.com",
+    databaseURL: "https://tataquizzen-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "tataquizzen",
+    storageBucket: "tataquizzen.appspot.com",
+    messagingSenderId: "601340020695",
+    appId: "1:601340020695:web:eb8372d5464be2b6caed92",
+    measurementId: "G-295KRN0CPH"
+  };
+
+  // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+var database = firebase.database()
+
+let vraagCount = 28;
 let buttonid = 0;
 let aantalVragen = 0;
+let laatsteVraag = false;
 const selectedAntwoord = [];
 const vraagElement = document.getElementById("vraag");
 const antwoordButtons = document.getElementById("antwoord-buttons");
@@ -11,8 +28,16 @@ const vraagNummer = document.getElementById("vraagnr");
 const buttonA = document.getElementById("0");
 const buttonB = document.getElementById("1");
 const buttonC = document.getElementById("2");
+const timer = document.getElementById("timertxt");
+const eindeForm = document.getElementById("eindeForm");
+const naamInput = document.getElementById("naamInput");
+const submitBtn = document.getElementById("submitBtn");
+const emailInput = document.getElementById("emailInput");
+let uid;
+// const testbtn = document.getElementById("testbtn");
 
 function startQuiz(){
+    eindeForm.hidden = true;
     // fetch('../vragen/vragengs.json')
     // .then(res => res.json())
     // .then(data => {
@@ -28,6 +53,12 @@ function getType(){
     fetch('../vragen/vragengs.json')
     .then(res => res.json())
     .then(data => {
+        if(data.vragen[vraagCount].laatste == "ja"){
+            volgendeButton.innerHTML = "Inleveren";
+        }
+        else{
+            volgendeButton.innerHTML = "Volgende";
+        }
         if (data.vragen[vraagCount].type == "normal"){
             // console.log("normale vraag")
             imgDiv.classList.remove("imagestyle");
@@ -69,6 +100,7 @@ function NormaalVraag(){
      buttonid = 0;
     })
     isSelected();
+    console.log(laatsteVraag)
 }
 
 function ImageVraag(){
@@ -95,6 +127,7 @@ function ImageVraag(){
      buttonid = 0;
     })
     isSelected();
+    console.log(laatsteVraag)
 }
 
 function isSelected(){
@@ -115,21 +148,30 @@ volgendeButton.addEventListener("click", ()=>{
     fetch('../vragen/vragengs.json')
     .then(res => res.json())
     .then(data => {
-        if(data.vragen[vraagCount+1].laatste == "ja"){
-            // console.log("dit was de laatste vraag");
-            // volgendeButton.disabled = true;
-            volgendeButton.innerHTML = "Inleveren"
-        }
-        vraagCount++;
-        // while(antwoordButtons.firstChild){
-        //      antwoordButtons.removeChild(antwoordButtons.firstChild);
-        //     }
-        buttonSelect();
-        while(imgDiv.firstChild){
+        if (!laatsteVraag){
+            if(data.vragen[vraagCount+1].laatste == "ja"){
+                // console.log("dit was de laatste vraag");
+                // volgendeButton.disabled = true;
+                laatsteVraag = !laatsteVraag;
+            }
+            vraagCount++;
+            // while(antwoordButtons.firstChild){
+            //      antwoordButtons.removeChild(antwoordButtons.firstChild);
+            //     }
+            buttonSelect();
+            while(imgDiv.firstChild){
             imgDiv.removeChild(imgDiv.firstChild);
+            }
+            getType();
         }
-        getType();
+        else {
+            getForm();
+        }
+        // }
+        // if (!laatsteVraag){
+        // console.log(laatsteVraag)
     })
+    // console.log(vraagCount);
 });
 
 vorigeButton.addEventListener("click", ()=>{
@@ -139,6 +181,10 @@ vorigeButton.addEventListener("click", ()=>{
         if (volgendeButton.disabled){
             volgendeButton.disabled = false;
             volgendeButton.innerHTML = "Volgende"
+            // laatsteVraag = false;
+        }
+        if (laatsteVraag){
+            laatsteVraag = !laatsteVraag
         }
         if (vraagCount >= 2){
             vraagCount--;
@@ -153,6 +199,7 @@ vorigeButton.addEventListener("click", ()=>{
         }
     })
     Opgeslagen();
+    console.log(vraagCount);
 });
 
 buttonA.onclick = function (){
@@ -195,6 +242,37 @@ function Opgeslagen(){
         buttonC.classList.add("selected");
         // console.log(selectedAntwoord[vraagCount] + " C");
     }
+}
+
+// testbtn.onclick = function(){
+
+// }
+function getForm(){
+    uid = localStorage.getItem("UID");
+    if (uid == null){
+        uid = Date.now().toString(36) + Math.random().toString(36).substring(2,12).padStart(12, 0);
+        localStorage.setItem("UID", JSON.stringify(uid))
+        console.log(uid);
+    }
+    else{
+        console.log(uid);
+    }
+    timer.remove();
+    vraagElement.remove();
+    vorigeButton.disabled = true;
+    imgDiv.remove();
+    antwoordButtons.remove();
+    vorigeButton.remove();
+    vraagNummer.remove();
+    volgendeButton.remove();
+    eindeForm.hidden = false;
+}
+submitBtn.onclick = function (){
+    console.log(uid, naamInput.value)
+}
+function loadScore(){
+    
+    // document.getElementById("naamInput").value;
 }
 startQuiz();
 // getType();

@@ -16,11 +16,13 @@
                     <li class="nav-btn">Scoreborden</li>
                 </ul>
             </div>
+            
         <div class="timerbar">
-            <p>00:00</p>
+            <p id="timertxt">00:00</p>
         </div>
         <div class="progressbar"></div>
         <div class="app">
+            <!-- <button id="testbtn" class="btn">Test button</button> -->
             <h2 id="vraag"></h2>
             <div class="quiz">
                 <div id="antwoord-buttons">
@@ -29,6 +31,16 @@
                 <button class="btn" id="2">Antwoord 3</button>
             </div>
             <div id="imagediv">
+            </div>
+        </div>
+        <div id="eindeForm">
+            <p>Om je score te bekijken en op te slaan moet je een Naam invoeren.</p>
+            <div class="formInput">
+                <h2>Naam: </h2>
+                <input type="text" spellcheck="false" id="naamInput" onkeyup="checkNaam()">
+                <!-- <h2>E-mail: </h2>
+                <input type="text" spellcheck="false" id="emailInput"> -->
+                <button id="submitBtn" disabled>Opslaan</button>
             </div>
         </div>
     </div>
@@ -45,12 +57,19 @@
         </div>
     </div>
     </div>
-        <script src="../scripts/script.js"></script>
     </body>
-
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
-        import { getDatabase } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-analytics.js";
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
+    <script type="module" src="../scripts/script.js"></script>
+    <script>
+    const naamInput = document.getElementById("naamInput");
+    const submitBtn = document.getElementById("submitBtn");
+    function checkNaam(){
+        if(naamInput.value.length > 0){
+        submitBtn.disabled = false;
+    } else {
+        submitBtn.disabled = true;
+    }
+}
     </script>
 </html>

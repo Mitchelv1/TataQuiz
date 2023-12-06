@@ -52,6 +52,68 @@ body, html {
     font-weight: 600;
     overflow: hidden;
 }
+#eindeForm {
+    text-align: center;
+    min-height: 430px;
+}
+.formInput {
+    padding: 60px 0 0;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+}
+.formInput h2 {
+    text-align: left;
+    font-size: 1.2vw;
+    margin-bottom: 8px;
+}
+.formInput input {
+    border-radius: 4px;
+    border: 1px solid #797979;
+    width: 100%;
+    font-size: 1vw;
+    outline: none;
+    padding: 8px 10px 8px;
+    max-width: 500px;
+    min-height: 50px;
+    display: block;
+}
+.formInput input:focus {
+    border: 1px solid #146cd1;
+    box-shadow: 0px 0px 7px rgba(109, 179, 255, 0.75);
+}
+#eindeForm p {
+    padding: 20px 0 0px;
+    font-size: 1.6vw;
+    color: #001f52;
+    font-weight: 600;
+    overflow: hidden;
+}
+#submitBtn {
+    background: #3D7EDB;
+    color: #fff;
+    font-weight: 500;
+    /* float: right; */
+    /* max-width: 150px; */
+    min-height: 45px;
+    width: 100%;
+    padding: 10px 5px;
+    border: 1px solid #222222;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+#submitBtn:hover:not([disabled]){
+    background: rgb(35, 87, 160);
+    color: #fff;
+}
+#submitBtn:disabled,
+#submitBtn[disabled]{
+    background-color: #cccccc;
+    color: #818181;
+}
 .btn{
     background-color: #3D7EDB;
     color: #ffffff;
@@ -138,8 +200,8 @@ body, html {
     transition: all 0.3s;
 }
 #volgende-btn:hover:not([disabled]){
-    background: #ffffff;
-    color: #3D7EDB;
+    background: rgb(35, 87, 160);
+    color: #fff;
 }
 #volgende-btn:disabled,
 #volgende-btn[disabled]{
@@ -161,8 +223,8 @@ body, html {
     transition: all 0.3s;
 }
 #vorige-btn:hover:not([disabled]){
-    background: #ffffff;
-    color: #3D7EDB;
+    background: rgb(35, 87, 160);
+    color: #fff;
 }
 #vorige-btn:disabled,
 #vorige-btn[disabled]{
@@ -236,6 +298,15 @@ li:hover:not([disabled]){
     .app h2{
         font-size: 21.5px;
     }
+    #eindeForm p {
+        font-size: 21.5px;
+    }
+    .formInput h2 {
+        font-size: 16px;
+    }
+    .formInput input {
+        font-size: 14px;
+    }
     .btn, .btnimg{
         font-size: 16px;
     }
@@ -255,6 +326,15 @@ li:hover:not([disabled]){
     }
     .app h2{
         font-size: 18.5px;
+    }
+    #eindeForm p {
+        font-size: 18.5px;
+    }
+    .formInput h2 {
+        font-size: 13px;
+    }
+    .formInput input {
+        font-size: 12px;
     }
     .btn, .btnimg{
         font-size: 13px;
