@@ -14,11 +14,20 @@ firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database()
 
+let uid;
 let vraagCount = 28;
 let buttonid = 0;
-let aantalVragen = 0;
+let aantalVragen = 1;
+let goed = 0;
 let laatsteVraag = false;
+let quizVragen = '';
+let quizGoed = '';
+let seconden = 0;
+let minuten = 0;
+let restSeconden = 0;
+let timerInterval;
 const selectedAntwoord = [];
+const AGoed = [];
 const vraagElement = document.getElementById("vraag");
 const antwoordButtons = document.getElementById("antwoord-buttons");
 const volgendeButton = document.getElementById("volgende-btn");
@@ -29,15 +38,45 @@ const buttonA = document.getElementById("0");
 const buttonB = document.getElementById("1");
 const buttonC = document.getElementById("2");
 const timer = document.getElementById("timertxt");
+const eindeTitel = document.getElementById("eindeTitel");
 const eindeForm = document.getElementById("eindeForm");
+const formInput = document.getElementById("formInput");
+const resultaatDiv = document.getElementById("resultaatDiv");
+const resultaatTxt = document.getElementById("resultaatTxt");
 const naamInput = document.getElementById("naamInput");
 const submitBtn = document.getElementById("submitBtn");
-const emailInput = document.getElementById("emailInput");
-let uid;
+const terugBtn = document.getElementById("terugBtn");
+// const emailInput = document.getElementById("emailInput");
+
 // const testbtn = document.getElementById("testbtn");
 
+document.addEventListener('DOMContentLoaded', startTimer);
+
 function startQuiz(){
-    eindeForm.hidden = true;
+    if (document.title === "Tata Quiz | Gereedschappen"){
+        quizVragen = '../vragen/vragengs.json'
+        quizGoed = 'gsvragen/'
+    } else if (document.title === "Tata Quiz | Pompen"){
+        quizVragen = '../vragen/vragenpp.json'
+        quizGoed = 'ppvragen/'
+    }
+    // eindeForm.hidden = true;
+    // errorMsg.hidden = true;
+    fetch(quizVragen)
+    .then(res => res.json())
+    .then(data => {
+        while (data.vragen[aantalVragen].laatste != "ja"){
+            aantalVragen++;
+            // console.log(aantalVragen);
+        }
+        // if(data.vragen[vraagCount].laatste == "ja"){
+        //     volgendeButton.innerHTML = "Inleveren";
+        // }
+        // else{
+        //     volgendeButton.innerHTML = "Volgende";
+        // }
+        // console.log(data.vragen[1].type);
+    });
     // fetch('../vragen/vragengs.json')
     // .then(res => res.json())
     // .then(data => {
@@ -48,12 +87,38 @@ function startQuiz(){
     // })
     getType();
 }
+function formatTimer(num){
+    return num < 10 ? '0' + num : '' + num; 
+}
+function startTimer(){
+    timerInterval = setInterval(function () {
+        seconden++;
+
+        minuten = Math.floor(seconden / 60);
+
+        restSeconden = seconden % 60;
+
+        timer.textContent = `${formatTimer(minuten)}:${formatTimer(restSeconden)}`; 
+    }, 1000);
+}
+// var start = Date.now();
+// setInterval(function () {
+//     var delta = Date.now() - start;
+//     output(Math.floor(delta / 1000));
+
+// }, 1000);
+
 function getType(){
+    if (AGoed[vraagCount] == null){
+        // console.log(vraagCount-1 + "min 1")
+        // console.log(vraagCount + "current")
+        checkGoed();
+    }
     volgendeButton.disabled = true;
-    fetch('../vragen/vragengs.json')
+    fetch(quizVragen)
     .then(res => res.json())
     .then(data => {
-        if(data.vragen[vraagCount].laatste == "ja"){
+        if(vraagCount == aantalVragen){
             volgendeButton.innerHTML = "Inleveren";
         }
         else{
@@ -82,7 +147,7 @@ function getType(){
 }
 
 function NormaalVraag(){
-    fetch('../vragen/vragengs.json')
+    fetch(quizVragen)
     .then(res => res.json())
     .then(data => {
         vraagElement.innerHTML =  data.vragen[vraagCount].vraag;
@@ -96,15 +161,20 @@ function NormaalVraag(){
         // antwoordButtons.appendChild(button);
         buttonid++;
      });
-     vraagNummer.innerHTML = vraagCount + "/30"
+     if (vraagCount < 10){
+        vraagNummer.innerHTML = "0" + vraagCount + "/" + aantalVragen;
+     }
+     else {
+        vraagNummer.innerHTML = vraagCount + "/" + aantalVragen;
+     }
      buttonid = 0;
     })
     isSelected();
-    console.log(laatsteVraag)
+    // console.log(laatsteVraag)
 }
 
 function ImageVraag(){
-    fetch('../vragen/vragengs.json')
+    fetch(quizVragen)
     .then(res => res.json())
     .then(data => {
         vraagElement.innerHTML =  data.vragen[vraagCount].vraag;
@@ -118,16 +188,21 @@ function ImageVraag(){
         // antwoordButtons.appendChild(button);
         buttonid++;
      });
-     vraagNummer.innerHTML = vraagCount + "/30"
+     if (vraagCount < 10){
+        vraagNummer.innerHTML = "0" + vraagCount + "/" + aantalVragen;
+     }
+     else {
+        vraagNummer.innerHTML = vraagCount + "/" + aantalVragen;
+     }
      const imagesrc = data.vragen[vraagCount].image;
      const img = document.createElement("img");
      img.src = '../images/' + imagesrc + '.png';
-     img.classList.add('image')
+     img.classList.add('image');
      imgDiv.appendChild(img);
      buttonid = 0;
     })
     isSelected();
-    console.log(laatsteVraag)
+    // console.log(laatsteVraag)
 }
 
 function isSelected(){
@@ -144,12 +219,23 @@ function isSelected(){
         volgendeButton.disabled = false;
     }
 }
+
+function checkGoed(){
+    var goed_ref = database.ref('gsvragen/' + vraagCount + '/goed')
+    goed_ref.on('value', function(snapshot){
+        var data = snapshot.val()
+        // console.log(data);
+        AGoed[vraagCount] = data;
+        // console.log(AGoed[1] + " dit is 1");
+        // console.log(AGoed[2] + " dit is 2");
+    })
+}
 volgendeButton.addEventListener("click", ()=>{
-    fetch('../vragen/vragengs.json')
+    fetch(quizVragen)
     .then(res => res.json())
     .then(data => {
         if (!laatsteVraag){
-            if(data.vragen[vraagCount+1].laatste == "ja"){
+            if(vraagCount+1 == aantalVragen){
                 // console.log("dit was de laatste vraag");
                 // volgendeButton.disabled = true;
                 laatsteVraag = !laatsteVraag;
@@ -175,7 +261,7 @@ volgendeButton.addEventListener("click", ()=>{
 });
 
 vorigeButton.addEventListener("click", ()=>{
-    fetch('../vragen/vragengs.json')
+    fetch(quizVragen)
     .then(res => res.json())
     .then(data => {
         if (volgendeButton.disabled){
@@ -199,7 +285,7 @@ vorigeButton.addEventListener("click", ()=>{
         }
     })
     Opgeslagen();
-    console.log(vraagCount);
+    // console.log(vraagCount);
 });
 
 buttonA.onclick = function (){
@@ -247,7 +333,20 @@ function Opgeslagen(){
 // testbtn.onclick = function(){
 
 // }
+function countScore(){
+    let i = 1;
+    while (i <= aantalVragen){
+        if (selectedAntwoord[i] == AGoed[i] && selectedAntwoord[i] != null){
+            goed++;
+        }
+        i++;
+    }
+}
+
 function getForm(){
+    // checkGoed();
+    // console.log("Dit is antwoord van vraag 5 " + AGoed[5]);
+    clearInterval(timerInterval);
     uid = localStorage.getItem("UID");
     if (uid == null){
         uid = Date.now().toString(36) + Math.random().toString(36).substring(2,12).padStart(12, 0);
@@ -266,12 +365,27 @@ function getForm(){
     vraagNummer.remove();
     volgendeButton.remove();
     eindeForm.hidden = false;
+    countScore();
 }
-submitBtn.onclick = function (){
-    console.log(uid, naamInput.value)
-}
+
+submitBtn.onclick = function () {loadScore()};
+
 function loadScore(){
-    
+    database.ref('users/' + uid).set({
+        naam: naamInput.value,
+        goed: goed,
+        tijd: seconden
+    })
+    formInput.remove();
+    eindeTitel.remove();
+    eindeForm.classList.add("centerResultaat");
+    resultaatDiv.hidden = false;
+    // resultaatDiv.classList.add("formInput")
+    resultaatTxt.innerHTML = "Je hebt " + goed + " van de " + aantalVragen + " vragen goed en een tijd behaald van " + `${formatTimer(minuten)}:${formatTimer(restSeconden)}` + "!";
+    terugBtn.hidden = false;
+    console.log('data opgeslagen');
+    console.log(goed + " vragen goed");
+    console.log(uid, naamInput.value);
     // document.getElementById("naamInput").value;
 }
 startQuiz();
