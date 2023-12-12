@@ -26,7 +26,7 @@
             	{ "text": "Een combinatietang."}
 			],
 			"type": "image",
-			"image": "Zijkniptang"
+			"image": "gereedschap3"
 			},
 		"4": {
 			"vraag": "Met welke soort sleutel kan je bouten en moeren met een exact bepaald koppel aan draaien?",
@@ -45,7 +45,7 @@
             	{ "text": "De functie is om bouten en moeren aan te draaien met een nauwkeurig bepaald koppel en te voorkomen dat deze te los worden aangedraaid."}
 			],
 			"type": "image",
-            "image": "Momentsleutel"
+            "image": "gereedschap5"
 			},
 		"6": {
 			"vraag": "Wat zijn de voordelen van dopsleutels met bijbehorende losse doppen?",
@@ -55,7 +55,7 @@
             	{ "text": "Dopsleutels met bijbehorende losse doppen bieden de mogelijkheid om verschillende maten doppen te gebruiken met dezelfde handgreep."}
 			],
 			"type": "image",
-			"image": "Dopsleutel"
+			"image": "gereedschap6"
 			},
 		"7": {
 			"vraag": "Waarom is een ringsleutel handig?",
@@ -92,7 +92,7 @@
             	{ "text": "een Waterpomptang."}
 			],
 			"type": "image",
-            "image": "Waterpomptang"
+            "image": "gereedschap10"
 			},
 		"11": {
 			"vraag": "Hoe wordt het hefboomprincipe gebruikt bij een waterpomptang?",
@@ -111,7 +111,7 @@
             	{ "text": "Kunststof hamers worden voor het timmeren gebruikt."}
 			],
 			"type": "image",
-            "image": "Kunststof_hamer"
+            "image": "gereedschap12"
 			},
 		"13": {
 			"vraag": "Waar zijn de halfronde helften van de bek van een langbektang voorzien?",
@@ -157,7 +157,7 @@
             	{ "text": "De duimstok is van origine gelinkt aan het beroep van timmerman."}
 			],
 			"type": "image",
-            "image": "Duimstok"
+            "image": "gereedschap17"
 			},
 		"18": {
 			"vraag": "Wat is de nauwkeurigheid van de meeste schuifmaten?",
@@ -176,7 +176,7 @@
             	{ "text": "een Kunststofhamer."}
 			],
 			"type": "image",
-            "image": "Bankhamer"
+            "image": "gereedschap19"
 			},
 		"20": {
 			"vraag": "Waar voor wordt de bastaardvijl gebruikt?",
@@ -204,7 +204,7 @@
             	{ "text": "Een gewone schuifmaat wordt gebruikt om de afmetingen van een werkstuk te meten, terwijl een hoogteschuifmaat wordt gebruikt om kraslijnen op een werkstuk aan te brengen."}
 			],
 			"type": "image",
-            "image": "Schuifmaat"
+            "image": "gereedschap22"
 			},
 		"23": {
 			"vraag": "Wat zijn slagletters en slagcijfers en waarvoor worden ze gebruikt?",
@@ -277,7 +277,7 @@
             	{ "text": "Een kapzaag."}
 			],
 			"type": "image",
-			"image": "Beugelzaag",
+			"image": "gereedschap30",
             "laatste": "ja"
 			}
 	}

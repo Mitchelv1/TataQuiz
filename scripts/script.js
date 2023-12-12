@@ -15,13 +15,13 @@ firebase.initializeApp(firebaseConfig);
 var database = firebase.database()
 
 let uid;
-let vraagCount = 28;
+let vraagCount = 1;
 let buttonid = 0;
 let aantalVragen = 1;
 let goed = 0;
 let laatsteVraag = false;
 let quizVragen = '';
-let quizGoed = '';
+let quizNaam = '';
 let seconden = 0;
 let minuten = 0;
 let restSeconden = 0;
@@ -54,11 +54,13 @@ document.addEventListener('DOMContentLoaded', startTimer);
 
 function startQuiz(){
     if (document.title === "Tata Quiz | Gereedschappen"){
-        quizVragen = '../vragen/vragengs.json'
-        quizGoed = 'gsvragen/'
+        quizVragen = '../vragen/vragengs.json';
+        quizNaam = 'gsvragen';
     } else if (document.title === "Tata Quiz | Pompen"){
-        quizVragen = '../vragen/vragenpp.json'
-        quizGoed = 'ppvragen/'
+        quizVragen = '../vragen/vragenpp.json';
+        quizNaam = 'ppvragen';
+    } else{
+        console.log("Page not found");
     }
     // eindeForm.hidden = true;
     // errorMsg.hidden = true;
@@ -221,7 +223,7 @@ function isSelected(){
 }
 
 function checkGoed(){
-    var goed_ref = database.ref('gsvragen/' + vraagCount + '/goed')
+    var goed_ref = database.ref(quizNaam + '/' + vraagCount + '/goed')
     goed_ref.on('value', function(snapshot){
         var data = snapshot.val()
         // console.log(data);
@@ -371,7 +373,7 @@ function getForm(){
 submitBtn.onclick = function () {loadScore()};
 
 function loadScore(){
-    database.ref('users/' + uid).set({
+    database.ref('users/' + uid + "/" + quizNaam).set({
         naam: naamInput.value,
         goed: goed,
         tijd: seconden
