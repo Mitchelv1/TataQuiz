@@ -20,7 +20,6 @@
         </div>
         <div class="middlebar"></div>
         <div class="app">
-            <!-- <button id="testbtn" class="btn">Test button</button> -->
             <h2 id="vraag"></h2>
             <div class="quiz">
                 <div id="antwoord-buttons">
@@ -39,8 +38,6 @@
                 <h2>Naam: </h2>
                 <input type="text" maxlength="25" spellcheck="false" id="naamInput" onkeyup="checkNaam()" onkeydown="checkNaam()">
                 <div id="errorMsg" hidden></div>
-                <!-- <h2>E-mail: </h2>
-                <input type="text" spellcheck="false" id="emailInput"> -->
                 <button id="submitBtn" disabled>Opslaan</button>
             </div>
             <div id="resultaatDiv" class="resultaatDiv" hidden>
@@ -77,12 +74,6 @@
     }else{
         submitBtn.disabled = true;
     }
-    // if (errorMsg.hidden == false) {
-    //     submitBtn.disabled = true;
-    // }
-    // else {
-    //     submitBtn.disabled = false;
-    // }
     if (regex.test(naamInput.value)){
         errorMsg.hidden = true;
     } else{
@@ -91,5 +82,5 @@
         errorMsg.textContent = 'Alleen letters en spaties zijn toegestaan.'
     }
 }
-    </script>
+</script>
 </html>

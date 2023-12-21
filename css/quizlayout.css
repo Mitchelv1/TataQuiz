@@ -75,7 +75,6 @@ body, html {
     align-items: center;
 }
 .resultaatDiv {
-    /* padding: 40px 0 0; */
     display: block;
     margin: 0 auto;
     width: 100%;
@@ -120,8 +119,6 @@ body, html {
     background: #3D7EDB;
     color: #fff;
     font-weight: 500;
-    /* float: right; */
-    /* max-width: 150px; */
     min-height: 45px;
     width: 100%;
     padding: 10px 5px;
@@ -272,19 +269,8 @@ body, html {
 }
 .vraagnummer p{
     font-size: 25px;
-    /* margin: 12px auto 0; */
     color: #001e4d;
-    /* text-align: center;
-    align-items: center;
-    justify-content: center; */
-    /* min-height: 45px; */
 }
-/* .toplogo{
-    margin: auto;
-    min-width: 400px;
-    padding-top: 1%;
-    width: 25%;
-} */
 .nav-bar{
     height: 110px;
     background: #377bbc;
@@ -333,19 +319,13 @@ li:hover:not([disabled]){
     .app h2, #eindeTitel, #resultaatTxt {
         font-size: 21.5px;
     }
-    /* #eindeTitel {
-        font-size: 21.5px;
-    } */
     #letOp {
         font-size: 13.5px;
-    }
-    .formInput h2 {
-        font-size: 16px;
     }
     .formInput input {
         font-size: 14px;
     }
-    .btn, .btnimg{
+    .btn, .btnimg, .formInput h2{
         font-size: 16px;
     }
 }
@@ -362,9 +342,6 @@ li:hover:not([disabled]){
     .formInput{
         padding: 40px 0 0; 
     }
-    /* .resultaatDiv {
-        padding-top: 40px;
-    } */
     #errorMsg{
         font-size: 15px;
     }
@@ -383,26 +360,14 @@ li:hover:not([disabled]){
     .app h2, #eindeTitel, #resultaatTxt {
         font-size: 18.5px;
     }
-    /* #eindeTitel {
-        font-size: 18.5px;
-    } */ 
-    #letOp {
+    #letOp, .formInput input, #vorige-btn, #volgende-btn{
         font-size: 12px;
     }
     .formInput h2 {
         font-size: 13px;
     }
-    .formInput input {
-        font-size: 12px;
-    }
     .btn, .btnimg{
         font-size: 13px;
-    }
-    #vorige-btn{
-        font-size: 12px;
-    }
-    #volgende-btn{
-        font-size: 12px;
     }
     #imagediv img{
         width: 180px;
