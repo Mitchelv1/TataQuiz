@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Tata Quiz | Pompen</title>
+        <title>Pompen Quiz | Tata Quiz</title>
+        <link rel="icon" type="image/x-icon" href="../images/tatasteel.ico"></link>
         <link rel="stylesheet" href="../css/quizlayout.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class="container">
             <div class="nav-bar">
-                <div class="logodiv">
-                    <a href="../"><img src="../images/tatasteelicon.png"></a>
-                </div>
                 <ul>
+                    <a href="../"><li class="nav-logo"><img src="../images/tatasteelicon.png" width="110px"></li></a>
                     <a href="../quizzen"><li class="nav-btn">Quizzen</li></a>
-                    <li class="nav-btn">Scoreborden</li>
+                    <a href="../scoreborden"><li class="nav-btn">Scoreborden</li></a>
                 </ul>
-            </div>
-            
+            </div> 
         <div class="timerbar">
             <p id="timertxt">00:00</p>
         </div>
-        <div class="progressbar"></div>
+        <div class="middlebar"></div>
         <div class="app">
             <!-- <button id="testbtn" class="btn">Test button</button> -->
             <h2 id="vraag"></h2>
@@ -34,10 +32,12 @@
             </div>
         </div>
         <div id="eindeForm" hidden>
-            <p id="eindeTitel">Om je score te bekijken en op te slaan moet je een Naam invoeren.</p>
+            <p id="eindeTitel">Om je score te bekijken en op te slaan moet je een Naam invoeren.
+                <p id="letOp">Let op: Als je de quiz al eerder hebt gemaakt, wordt je score alleen opgeslagen als deze is verbeterd.</p>
+            </p>
             <div class="formInput" id="formInput">
                 <h2>Naam: </h2>
-                <input type="text" spellcheck="false" id="naamInput" onkeyup="checkNaam()" onkeydown="checkNaam()">
+                <input type="text" maxlength="25" spellcheck="false" id="naamInput" onkeyup="checkNaam()" onkeydown="checkNaam()">
                 <div id="errorMsg" hidden></div>
                 <!-- <h2>E-mail: </h2>
                 <input type="text" spellcheck="false" id="emailInput"> -->

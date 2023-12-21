@@ -29,7 +29,7 @@ body, html {
     padding-bottom: 30px;
     padding-right: 5px;
 }
-.progressbar{
+.middlebar{
     width: 90%;
     max-width: 1500px;
     height: 15px;
@@ -61,6 +61,12 @@ body, html {
     font-size: 1.6vw;
     color: #001f52;
     font-weight: 600;
+    overflow: hidden;
+}
+#letOp {
+    padding: 5px 0 0px;
+    font-size: 1vw;
+    color: #001f52;
     overflow: hidden;
 }
 .centerResultaat{
@@ -273,25 +279,17 @@ body, html {
     justify-content: center; */
     /* min-height: 45px; */
 }
-.toplogo{
+/* .toplogo{
     margin: auto;
     min-width: 400px;
     padding-top: 1%;
     width: 25%;
-}
+} */
 .nav-bar{
     height: 110px;
     background: #377bbc;
     margin: 0 auto 0;
     border-bottom: 3px solid #ffffff;
-}
-.logodiv{
-    width: 100px;
-    height: 100px;
-    float: left;
-}
-.logodiv img{
-    width: 100px;
 }
 ul {
     display: flex;
@@ -301,11 +299,21 @@ ul {
     overflow: hidden;
     background-color: #377bbc;
 }
-li {
+.nav-btn {
     float: left;
     display: block;
     height: 107px;
     padding: 43px 25px;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    transition: box-shadow .2s;
+}
+.nav-logo {
+    float: left;
+    display: block;
+    height: 107px;
     color: #ffffff;
     text-align: center;
     text-decoration: none;
@@ -322,11 +330,14 @@ li:hover:not([disabled]){
     height: 100%;
 }
 @media screen and (max-width: 1350px){
-    .app h2{
+    .app h2, #eindeTitel, #resultaatTxt {
         font-size: 21.5px;
     }
-    #eindeForm p {
+    /* #eindeTitel {
         font-size: 21.5px;
+    } */
+    #letOp {
+        font-size: 13.5px;
     }
     .formInput h2 {
         font-size: 16px;
@@ -363,11 +374,20 @@ li:hover:not([disabled]){
     .toplogo{
         min-width: 300px;
     }
-    .app h2{
+    .timerbar p {
+        font-size: 24px;
+    }
+    .timerbar {
+        padding-bottom: 24px;
+    }
+    .app h2, #eindeTitel, #resultaatTxt {
         font-size: 18.5px;
     }
-    #eindeForm p {
+    /* #eindeTitel {
         font-size: 18.5px;
+    } */ 
+    #letOp {
+        font-size: 12px;
     }
     .formInput h2 {
         font-size: 13px;

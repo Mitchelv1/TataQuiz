@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pompen Scorebord | Tata Quiz</title>
+        <link rel="icon" type="image/x-icon" href="../images/tatasteel.ico"></link>
+        <link rel="stylesheet" href="../css/scorebordlayout.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <div class="nav-bar">
+                <ul>
+                    <a href="../"><li class="nav-logo"><img src="../images/tatasteelicon.png" width="110px"></li></a>
+                    <a href="../quizzen"><li class="nav-btn">Quizzen</li></a>
+                    <a href="../scoreborden"><li class="nav-btn">Scoreborden</li></a>
+                </ul>
+            </div> 
+            <div class="scorebordtopbar">
+                <p class="titelnaam">Naam</p>
+                <p class="titel">Score</p>
+                <p class="titel">Tijd</p>
+            </div>
+            <div class="middlebar"></div>
+            <div class="app" id="app">
+            </div>
+        </div>
+    </body>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
+    <script type="module" src="../scripts/scorebord.js"></script>
+</html>

@@ -7,9 +7,9 @@ const firebaseConfig = {
     messagingSenderId: "601340020695",
     appId: "1:601340020695:web:eb8372d5464be2b6caed92",
     measurementId: "G-295KRN0CPH"
-  };
+};
 
-  // Initialize Firebase
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database()
@@ -39,6 +39,7 @@ const buttonB = document.getElementById("1");
 const buttonC = document.getElementById("2");
 const timer = document.getElementById("timertxt");
 const eindeTitel = document.getElementById("eindeTitel");
+const letOp = document.getElementById("letOp");
 const eindeForm = document.getElementById("eindeForm");
 const formInput = document.getElementById("formInput");
 const resultaatDiv = document.getElementById("resultaatDiv");
@@ -53,14 +54,12 @@ const terugBtn = document.getElementById("terugBtn");
 document.addEventListener('DOMContentLoaded', startTimer);
 
 function startQuiz(){
-    if (document.title === "Tata Quiz | Gereedschappen"){
+    if (document.title === "Gereedschappen Quiz | Tata Quiz"){
         quizVragen = '../vragen/vragengs.json';
         quizNaam = 'gsvragen';
-    } else if (document.title === "Tata Quiz | Pompen"){
+    } else if (document.title === "Pompen Quiz | Tata Quiz"){
         quizVragen = '../vragen/vragenpp.json';
         quizNaam = 'ppvragen';
-    } else{
-        console.log("Page not found");
     }
     // eindeForm.hidden = true;
     // errorMsg.hidden = true;
@@ -223,8 +222,8 @@ function isSelected(){
 }
 
 function checkGoed(){
-    var goed_ref = database.ref(quizNaam + '/' + vraagCount + '/goed')
-    goed_ref.on('value', function(snapshot){
+    var agoed_ref = database.ref(quizNaam + '/' + vraagCount + '/goed')
+    agoed_ref.on('value', function(snapshot){
         var data = snapshot.val()
         // console.log(data);
         AGoed[vraagCount] = data;
@@ -353,10 +352,10 @@ function getForm(){
     if (uid == null){
         uid = Date.now().toString(36) + Math.random().toString(36).substring(2,12).padStart(12, 0);
         localStorage.setItem("UID", JSON.stringify(uid))
-        console.log(uid);
+        // console.log(uid);
     }
     else{
-        console.log(uid);
+        // console.log(uid);
     }
     timer.remove();
     vraagElement.remove();
@@ -370,24 +369,46 @@ function getForm(){
     countScore();
 }
 
-submitBtn.onclick = function () {loadScore()};
+submitBtn.onclick = function () {checkScore()};
 
-function loadScore(){
-    database.ref('users/' + uid + "/" + quizNaam).set({
+function checkScore(){
+    var goed_ref = database.ref('users/' + uid + '/' + quizNaam + '/goed')
+    goed_ref.on('value', function(snapshot){
+        var data = snapshot.val()
+        if (goed > data){
+            postScore();
+        }
+        if (goed == data){
+            var tijd_ref = database.ref('users/' + uid + '/' + quizNaam + '/tijd')
+            tijd_ref.on('value', function(snapshot){
+                    var data = snapshot.val()
+                    if (seconden < data){
+                        postScore();
+                    }
+                })
+            }
+        })
+    loadScore();
+}
+function postScore(){
+    database.ref('users/' + uid + '/' + quizNaam).set({
         naam: naamInput.value,
         goed: goed,
         tijd: seconden
     })
+}
+function loadScore(){
     formInput.remove();
     eindeTitel.remove();
+    letOp.remove();
     eindeForm.classList.add("centerResultaat");
     resultaatDiv.hidden = false;
     // resultaatDiv.classList.add("formInput")
     resultaatTxt.innerHTML = "Je hebt " + goed + " van de " + aantalVragen + " vragen goed en een tijd behaald van " + `${formatTimer(minuten)}:${formatTimer(restSeconden)}` + "!";
     terugBtn.hidden = false;
-    console.log('data opgeslagen');
-    console.log(goed + " vragen goed");
-    console.log(uid, naamInput.value);
+    // console.log('data opgeslagen');
+    // console.log(goed + " vragen goed");
+    // console.log(uid, naamInput.value);
     // document.getElementById("naamInput").value;
 }
 startQuiz();

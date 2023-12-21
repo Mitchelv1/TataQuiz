@@ -7,6 +7,7 @@
 body, html {
     background: #377bbc;
     height: 100%;
+    min-width: 300px;
     margin: 0px auto;
 }
 .titel h1 {
@@ -24,14 +25,6 @@ body, html {
     margin: 0 auto 0;
     border-bottom: 3px solid #ffffff;
 }
-.logodiv{
-    width: 100px;
-    height: 100px;
-    float: left;
-}
-.logodiv img{
-    width: 100px;
-}
 ul {
     display: flex;
     list-style-type: none;
@@ -40,11 +33,21 @@ ul {
     overflow: hidden;
     background-color: #377bbc;
 }
-li {
+.nav-btn {
     float: left;
     display: block;
     height: 107px;
     padding: 43px 25px;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    transition: box-shadow .2s;
+}
+.nav-logo {
+    float: left;
+    display: block;
+    height: 107px;
     color: #ffffff;
     text-align: center;
     text-decoration: none;
@@ -74,13 +77,12 @@ li:hover:not([disabled]){
     padding-left: 30px;
     border-radius: 10px;
 }
-.app h1{
+/* .app h1{
     font-size: 10px;
     color: #001e4d;
     font-weight: 600;
     padding-bottom: 30px;
-}
-
+} */
 .quiz-content h1{
     font-size: 30px;
     color: #001f52;
