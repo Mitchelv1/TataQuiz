@@ -199,6 +199,7 @@ function ImageVraag(){
      const img = document.createElement("img");
      img.src = '../images/' + imagesrc + '.png';
      img.classList.add('image');
+     img.loading = "lazy";
      imgDiv.appendChild(img);
      buttonid = 0;
     })
