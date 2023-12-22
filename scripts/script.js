@@ -151,10 +151,19 @@ function ImageVraag(){
      }
      const imagesrc = data.vragen[vraagCount].image;
      const img = document.createElement("img");
-     img.src = '../images/' + imagesrc + '.png';
-     img.classList.add('image');
-     img.loading = "lazy";
-     imgDiv.appendChild(img);
+     const preloadedImg = new Image();
+     preloadedImg.src = '../images/' + imagesrc + '.png';
+     preloadedImg.addEventListener('load', function() {
+        img.src = preloadedImg.src;
+        img.classList.add('image');
+        imgDiv.appendChild(img);
+     })
+     if (preloadedImg.complete) {
+        preloadedImg.dispatchEvent(new Event('load'));
+     }
+    //  img.src = '../images/' + imagesrc + '.png';
+    //  img.classList.add('image');
+    //  imgDiv.appendChild(img);
      buttonid = 0;
     })
     isSelected();
